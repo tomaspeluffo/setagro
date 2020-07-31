@@ -6,6 +6,7 @@ import Modulos from './components/Modulos'
 import Caracteristicas from './components/Caracteristicas'
 import Galeria from './components/Galeria'
 import Contacto from './components/Contacto'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -30,7 +31,12 @@ function App() {
           
         </Contacto>
         </div>
+
+
+        <Footer />
       </div>
+
+      
 
   );
 }

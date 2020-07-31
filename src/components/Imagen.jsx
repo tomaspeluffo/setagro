@@ -9,7 +9,7 @@ const Imagen = ({src}) => {
 
     return ( 
         <Fragment>
-            <img src={src} alt="image-galeria" style={imgStyles}/>
+            <img src={src} alt="galeria" style={imgStyles}/>
 
         </Fragment>
      );

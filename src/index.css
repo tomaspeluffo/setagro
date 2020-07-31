@@ -173,7 +173,7 @@ nav{
     text-align: center;
     justify-content: center;
     border-radius: 20px;
-    padding-top: 11px;
+    padding-top: 10px;
     opacity: 0.8;
     text-transform: uppercase;
 }
@@ -392,6 +392,7 @@ nav{
     padding: 10px;
     color: #EDECEC;
     width: 100%;
+    resize: none;
 
 }
 
@@ -426,27 +427,50 @@ nav{
         color: black;
         cursor: pointer;
         text-transform: uppercase;
+        font-weight: bold;
+        
   }
-/* 
-  @media screen and (max-width: 1000px){
-    .contact-form{
-      flex-direction: column;
-      width: 70%;
-    }
 
-    .input-fields{
-        width: 100%;
-    }
+/* Error */
+  .errorContainer{
+      color: #EDECEC;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 20px;
+      font-size: 18px;
+  }
 
-    .mensaje{
-        width: 100%;
-    }
+/* Error */
 
-    .mensaje textarea{
-       height: 16vh;
-    }
-    
-  } */
+/* Footer */
 
+  .footerContainer{
+      width: 100%;
+      color:black ;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      margin-bottom: 0px;
+  }
 
-/* Contaco */
+  .footerLista{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+
+  .footerLista li {
+      margin-left: 20px;
+      list-style: none;
+      font-size: 14px;
+  }
+
+  @media screen and ( max-width : 600px){
+      .footerLista{
+          flex-direction: column;
+      }
+  }
+
+ 
+
+/* Footer */

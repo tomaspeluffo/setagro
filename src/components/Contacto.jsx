@@ -1,4 +1,5 @@
 import React, {useState, Fragment} from 'react';
+import Error from './Error';
 
 import emailjs from 'emailjs-com';
 
@@ -15,11 +16,15 @@ const Contacto = () => {
 
     const [ error, actualizarError] = useState(false);  
 
+    const [ mensaje, guardarMensaje] = useState("Enviar")
+
     const {nombre, telefono, email, consulta} = form
+
 
     // Funcion que actualiza los campos
 
     const actualizarState = (e) =>{
+        guardarMensaje("Enviar")
         actualizarForm({
             ...form,
             [e.target.name]: e.target.value 
@@ -37,13 +42,25 @@ const Contacto = () => {
             return
         }else{
             actualizarError(false)
-            emailjs.sendForm("gmail", "set_agro", e.target, "user_cs7f1MbbxjCMrVdu2MfPZ")
+            emailjs.sendForm("gmail", "setagro", e.target, "user_Uv0LXERmoqiW0HadtOWSL")
             .then((result) => {
                 console.log(result.text);
+                guardarMensaje("Enviado")
+                actualizarForm({
+                    nombre : "",
+                    email: "",
+                    telefono: "",
+                    consulta: ""
+                })
             }, (error) => {
                 console.log(error.text);
+                guardarMensaje("Enviar")
+
             });
         }
+        
+        
+
     }   
 
 
@@ -55,6 +72,8 @@ const Contacto = () => {
             >
                 <div className="wrapper">
                     <div className="contact-form">
+
+                        {error ? <Error /> : null}
                         <div className="input-fields">
                             <input
                                 type="text"
@@ -93,7 +112,7 @@ const Contacto = () => {
                             <button
                                 type="submit"
                                 className="btn"
-                            >Enviar</button>
+                            >{mensaje}</button>
                         </div>
 
                         </div>
